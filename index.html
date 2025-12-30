@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBT Login | Fancy Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+
+    <div class="login-wrapper">
+        <div class="glass-container">
+            <div>
+                <img src="logg.png" alt="academy_logo">
+                <h3>
+                    Almustaphademy
+                </h3>
+            </div>
+            
+            <h1>CBT Platform Login</h1>
+            <p>Access your assignments and examinations.</p>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Student ID / Username</label>
+                    <input type="text" id="username" placeholder="e.g., CBT-12345" required>
+                    <small class="error-text" id="username-error"></small>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                    <small class="error-text" id="password-error"></small>
+                </div>
+                
+                <button type="submit" class="login-button">LOG IN</button>
+            </form>
+
+            <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

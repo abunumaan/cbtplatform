@@ -1,0 +1,55 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="exam.css">
+  <script src="exam.js"></script>
+  <title>My Web Page</title>
+</head>
+<body>
+<div id="exam-container">
+    <div id="side-panel">
+        <div class="timer-box">
+            <h3>Time Remaining</h3>
+            <div id="examTimer" class="timer-display">00:00</div>
+        </div>
+        
+        <div class="summary-box">
+            <h3>Question Navigation</h3>
+            <div id="question-navigation-grid">
+                </div>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <div id="question-panel">
+            <h2 id="question-number">Question 1 of 30</h2>
+            <div id="question-text">
+                What is the chemical symbol for gold?
+            </div>
+
+            <form id="question-form">
+                <div class="option-container">
+                    <label class="option-item">
+                        <input type="radio" name="answer" value="A">
+                        <span class="option-text">A. Ag</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="answer" value="B">
+                        <span class="option-text">B. Au</span>
+                    </label>
+                    </div>
+            </form>
+        </div>
+
+        <div class="nav-controls">
+            <button id="prev-btn" class="nav-button prev-btn" disabled>Previous</button>
+            <button id="next-btn" class="nav-button next-btn">Next</button>
+            <button id="submit-exam-btn" class="nav-button submit-btn">Submit Exam</button>
+        </div>
+    </div>
+</div>
+<script src="exam.js"></script>
+</body>
+</html>

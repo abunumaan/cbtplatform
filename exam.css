@@ -1,0 +1,153 @@
+body {
+    background-color: #f4f7f9;
+    font-family: 'Poppins', sans-serif;
+}
+
+#exam-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 30px;
+}
+
+/* --- SIDE PANEL (Timer & Navigation) --- */
+#side-panel {
+    flex: 0 0 280px; /* Fixed width */
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    height: fit-content; /* Fit content height */
+    position: sticky; /* Keep it visible while scrolling */
+    top: 20px;
+}
+
+.timer-box {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.timer-display {
+    font-size: 3em;
+    font-weight: 600;
+    color: #dc3545; /* Red color for urgency */
+    padding: 10px 0;
+}
+
+/* Question Navigation Grid */
+#question-navigation-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.nav-q-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+    color: #333;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.nav-q-btn.answered {
+    background: #28a745; /* Green for answered questions */
+    color: white;
+    border-color: #28a745;
+}
+
+.nav-q-btn.current {
+    border: 3px solid #007bff; /* Blue border for the current question */
+    background: #e9f5ff;
+}
+
+/* --- MAIN CONTENT (Question Area) --- */
+#main-content {
+    flex-grow: 1;
+}
+
+#question-panel {
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+#question-number {
+    color: #007bff;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+#question-text {
+    font-size: 1.25em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Option Styling */
+.option-item {
+    display: block;
+    background: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.option-item:hover {
+    background: #e2e6ea;
+}
+
+/* Style the text and hide the default radio button */
+.option-item input[type="radio"] {
+    display: none;
+}
+
+/* Style when the radio button is selected */
+.option-item input[type="radio"]:checked + .option-text {
+    font-weight: 600;
+    color: #007bff;
+}
+
+.option-item input[type="radio"]:checked {
+    background: #007bff20; /* Light blue background for selected */
+    border-color: #007bff;
+}
+
+
+/* --- NAVIGATION CONTROLS --- */
+.nav-controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.prev-btn {
+    background: #6c757d;
+    color: white;
+}
+.next-btn {
+    background: #007bff;
+    color: white;
+}
+
+.submit-btn {
+    background: #dc3545; /* Red for the final action */
+    color: white;
+}
