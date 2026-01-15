@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Batch Upload Questions</title>
+    <link rel="stylesheet" href="results.css"> </head>
+<body>
+    <div class="container">
+        <h2>Batch Upload Questions</h2>
+        <p>Upload an Excel file (.xlsx) with columns: <strong>question_text, option_a, option_b, option_c, option_d, correct_answer</strong></p>
+        
+        <div style="margin: 30px 0; padding: 20px; border: 2px dashed #007bff; border-radius: 10px;">
+            <input type="file" id="excelFile" accept=".xlsx, .xls">
+            <button id="uploadBtn" class="review-btn">Upload to Database</button>
+        </div>
+
+        <div id="statusMessage"></div>
+        <button onclick="window.location.href='results.html'" class="back-btn">View Results</button>
+    </div>
+
+    <script>
+        document.getElementById('uploadBtn').addEventListener('click', async () => {
+            const fileInput = document.getElementById('excelFile');
+            const status = document.getElementById('statusMessage');
+
+            if (!fileInput.files[0]) {
+                alert("Please select a file first.");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            status.innerHTML = "Uploading... please wait.";
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/upload-excel', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+
+                if (result.status === "success") {
+                    status.innerHTML = `<p style="color: green;">${result.message}</p>`;
+                    fileInput.value = ''; // Reset input
+                } else {
+                    status.innerHTML = `<p style="color: red;">Error: ${result.message}</p>`;
+                }
+            } catch (error) {
+                status.innerHTML = `<p style="color: red;">Server Error. Is Python running?</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
