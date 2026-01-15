@@ -23,8 +23,9 @@ app.config.update(
 db = SQLAlchemy(app)
 
 CORS(app, supports_credentials=True, origins=[
-    "https://github.com/abunumaan/cbtplatform.git",
-    "https://abunumaan.github.io/cbtplatform/"
+    "http://127.0.0.1:5500",
+    "http://localhost:5500",
+    "https://abunumaan.github.io"
 ])
 
 # 3. DATABASE TABLES (The Cloud Library Folders)
@@ -165,5 +166,6 @@ def logout():
 if __name__ == '__main__':
 
     app.run(debug=True, port=5000)
+
 
 
