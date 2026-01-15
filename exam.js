@@ -8,7 +8,7 @@ let timerInterval;
 // --- Function to fetch questions from Python ---
 async function loadQuestionsFromBackend() {
     try {
-        const response = await fetch('http://127.0.0.1:5000/get-questions');
+        const response = await fetch('https://almustaphademy.onrender.com/get-questions');
         const data = await response.json();
         questionsData = data;
         renderQuestion();
@@ -76,7 +76,7 @@ async function submitExam() {
     if (!confirm("Are you sure you want to submit your exam?")) return;
 
     try {
-        const response = await fetch('http://127.0.0.1:5000/submit-exam', {
+        const response = await fetch('https://almustaphademy.onrender.com/submit-exam', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -167,7 +167,7 @@ function startTimer() {
 // Update your loadQuestionsFromBackend to start the timer
 async function loadQuestionsFromBackend() {
     try {
-        const response = await fetch('http://127.0.0.1:5000/get-questions', { credentials: 'include' });
+        const response = await fetch('https://almustaphademy.onrender.com/get-questions', { credentials: 'include' });
         const data = await response.json();
         questionsData = data;
         renderQuestion();
@@ -175,4 +175,5 @@ async function loadQuestionsFromBackend() {
     } catch (error) {
         console.error("Fetch error:", error);
     }
+
 }
