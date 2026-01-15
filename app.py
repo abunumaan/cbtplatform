@@ -23,10 +23,6 @@ app.config.update(
 db = SQLAlchemy(app)
 
 CORS(app, supports_credentials=True, origins=[
-    "http://127.0.0.1:5500", 
-    "http://127.0.0.1:5501", 
-    "http://localhost:5500", 
-    "http://localhost:5501",
     "https://github.com/abunumaan/cbtplatform.git",
     "https://abunumaan.github.io/cbtplatform/"
 ])
@@ -169,4 +165,5 @@ def logout():
 if __name__ == '__main__':
 
     app.run(debug=True, port=5000)
+
 
