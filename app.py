@@ -27,7 +27,8 @@ CORS(app, supports_credentials=True, origins=[
     "http://127.0.0.1:5501", 
     "http://localhost:5500", 
     "http://localhost:5501",
-    "https://github.com/abunumaan/cbtplatform.git"
+    "https://github.com/abunumaan/cbtplatform.git",
+    "https://abunumaan.github.io/cbtplatform/"
 ])
 
 # 3. DATABASE TABLES (The Cloud Library Folders)
@@ -168,3 +169,4 @@ def logout():
 if __name__ == '__main__':
 
     app.run(debug=True, port=5000)
+
