@@ -5,18 +5,6 @@ const EXAM_DURATION = 30;
 let timeRemaining = EXAM_DURATION * 60; 
 let timerInterval;
 
-// --- Function to fetch questions from Python ---
-async function loadQuestionsFromBackend() {
-    try {
-        const response = await fetch('https://almustaphademy.onrender.com/get-questions');
-        const data = await response.json();
-        questionsData = data;
-        renderQuestion();
-    } catch (error) {
-        console.error("Fetch error:", error);
-    }
-}
-
 // This function "grabs" the letter (A, B, C, or D) you clicked
 function saveCurrentAnswer() {
     // Look for the radio button that is "checked"
