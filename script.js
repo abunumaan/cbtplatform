@@ -43,7 +43,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         const passwordValue = passwordInput.value.trim();
 
         // 1. Tell Python we are trying to log in
-        fetch('http://127.0.0.1:5000/login', {
+        fetch('https://abunumaan.github.io/cbtplatform/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -73,4 +73,5 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
             console.error('Error:', error);
         });
     }
+
 });
